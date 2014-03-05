@@ -18,7 +18,7 @@ DJANGO_APPS = (
 # Combine all the apps in the django variable INSTALLED_APPS
 INSTALLED_APPS = DJANGO_APPS + MICROSIP_MODULES
 
-ROOT_URLCONF = 'microsip_web.urls.prod'
+ROOT_URLCONF = 'microsip_consolidador.urls.prod'
 
 # Additional locations of static files
 STATICFILES_DIRS = (

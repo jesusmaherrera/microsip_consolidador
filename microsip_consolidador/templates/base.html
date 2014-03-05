@@ -1,0 +1,112 @@
+{% load dajaxice_templatetags %}
+<!DOCTYPE html>
+<html lang='es'>
+<head>
+  <meta charset='utf-8'>
+  <title>{% block title %}Microsip{% endblock %}</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1 maximum-scale=1" />
+
+  <!-- Estilos -->
+  <link rel='stylesheet' href='{{STATIC_URL}}css/normalize.css'/>
+
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap-theme.min.css">
+  <!-- <link rel='stylesheet' href='{{STATIC_URL}}css/base.css'/> -->
+  
+  {% block style_css %}{% endblock %}
+  <link rel='shortcut icon' href='{{STATIC_URL}}img/logo.ico'>
+</head>
+<body>
+  <nav id="navbar-example" class="navbar navbar-default navbar-static" role="navigation">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".bs-example-js-navbar-collapse">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="#">Consolidador Microsip</a>
+      </div>
+      <div class="collapse navbar-collapse bs-example-js-navbar-collapse">
+           <!--  <ul class="nav navbar-nav">
+              <li class="dropdown">
+                <a id="drop1" href="#" role="button" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
+                <ul class="dropdown-menu" role="menu" aria-labelledby="drop1">
+                  <li role="presentation"><a role="menuitem" tabindex="-1" href="http://twitter.com/fat">Action</a></li>
+                  <li role="presentation"><a role="menuitem" tabindex="-1" href="http://twitter.com/fat">Another action</a></li>
+                  <li role="presentation"><a role="menuitem" tabindex="-1" href="http://twitter.com/fat">Something else here</a></li>
+                  <li role="presentation" class="divider"></li>
+                  <li role="presentation"><a role="menuitem" tabindex="-1" href="http://twitter.com/fat">Separated link</a></li>
+                </ul>
+              </li>
+            </ul> -->
+            <ul class="nav navbar-nav navbar-right">
+              {% if not user.is_anonymous %}
+              <li id="fat-menu" class="dropdown">
+                <a href="#" id="drop3" role="button" class="dropdown-toggle" data-toggle="dropdown"><i class="glyphicon glyphicon-user"></i>  {{ user.username }} ({{ request.session.selected_database }}) <b class="caret"></b></a>
+                <ul class="dropdown-menu" role="menu" aria-labelledby="drop3">
+                  <li role="presentation"><a role="menuitem" tabindex="-1" href="/"><i class="glyphicon glyphicon-home"></i> Inicio</a></li>
+                  <li role="presentation"><a role="menuitem" tabindex="-1" href="/select_db/"><i class="glyphicon glyphicon-inbox"></i> Cambiar de empresa</a></li>
+                  <li role="presentation" class="divider"></li>
+                  <li role="presentation"><a role="menuitem" tabindex="-1" href="/logout/"><i class="glyphicon glyphicon-log-out"></i> Cerrar Sesion</a></li>
+                </ul>
+              </li>
+              {% else %}
+              <li id="fat-menu">
+                <a href="/login/" class="btn"><i class="glyphicon glyphicon-user"></i> Ingresar</a>
+              </li>
+              {% endif %}
+            </ul>
+          </div><!-- /.nav-collapse -->
+        </div><!-- /.container-fluid -->
+      </nav>
+
+  <div id="tools-module-bar" class="navbar-inner navbar-inner_min " style=" background-image: linear-gradient(to bottom, #e5e5e5, #e5e5e5); ">
+    {% block tools-module %}
+    {% endblock %}
+  </div>
+  <div id="span breadcrumbs" style="clear:both; margin-left: 35px;" class="hidden-phone">
+    <div id='breadcrumb' class='span6'>
+    {% block breadcrumb %}<a href="/"><i class="glyphicon glyphicon-home"></i></a>{% endblock %}
+    </div>
+  </div>
+  <section class='content' style='clear:both;'>
+    <div class="pagecontent">
+      {% block content %}{% endblock %}
+    </div>
+  </section>
+  <footer> 
+    <br>
+    <div class="row-fluid text-left hidden-phone">
+      <div class="span6 offset1">
+        <strong>CONTACTO </strong>
+        <br>
+        <address>
+          <abbr title="Telefono">Tel 1:</abbr> (625) 582-5014<br>
+          <abbr title="Telefono">Tel 2:</abbr> (625) 587-7607<br>
+        </address>
+      </div>
+      <div class="span3">
+        <p class="text-right">
+          <!-- <img src="{{STATIC_URL}}img/logo.png" style="height: 65px; width: 80px;"> -->
+          <br>
+        </p>
+      </div>
+    </div>
+    <div>
+      SIC &copy; 2014
+    </div>
+  </footer>
+  <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+  <script src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+  <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+
+{% block js_modulecode %}
+{% endblock %}
+{% block js_code %}
+    
+{% endblock %}
+</body>
+</html>

@@ -7,13 +7,12 @@ import sqlite3
 from local_settings import MICROSIP_MODULES
 
 RUTA_PROYECTO =os.path.dirname(os.path.realpath(__file__)).strip('settings')
-DIR = os.path.abspath(os.path.dirname(__file__))
 ADMINS = (
     # ('Your Name', 'your_email@example.com'),
 )
 
 MANAGERS = ADMINS
-DATABASE_ROUTERS = ['microsip_api.custom_db.databases_routers.MainRouter']
+DATABASE_ROUTERS = ['microsip_consolidador.libs.databases_routers.MainRouter']
 MICROSIP_DATABASES = {}
 DATABASES = {
     'default': {
@@ -179,7 +178,7 @@ MIDDLEWARE_CLASSES = (
 )
 
 # Python dotted path to the WSGI application used by Django's runserver.
-WSGI_APPLICATION = 'microsip_web.wsgi.application'
+WSGI_APPLICATION = 'microsip_consolidador.wsgi.application'
 
 TEMPLATE_DIRS = (
     # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
