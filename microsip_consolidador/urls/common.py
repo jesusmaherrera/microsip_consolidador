@@ -7,12 +7,8 @@ autocomplete_light.autodiscover()
 urlpatterns = patterns('',
     #main
     url(r'', include('microsip_consolidador.apps.main.urls', namespace='main')),
+    url(r'', include('microsip_api.apps.config.urls', namespace='config')),
     # url(r'autocomplete/', include('autocomplete_light.urls')),
-  
-    # #LOGIN
-    url(r'^select_db/$','microsip_consolidador.apps.main.views.select_db'),    
-    url(r'^login/$','microsip_consolidador.apps.main.views.ingresar'),
-    url(r'^logout/$', 'microsip_consolidador.apps.main.views.logoutUser'),
 )
  
 urlpatterns += staticfiles_urlpatterns()

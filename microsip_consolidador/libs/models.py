@@ -9,8 +9,7 @@ from microsip_api.comun.sic_db import next_id, first_or_none
 import django.dispatch
 
 articulo_clave_save_signal = django.dispatch.Signal()
-from microsip_consolidador.apps.config.models import Usuario
-
+from microsip_api.apps.config.models import Usuario
 from microsip_api.models_base.comun.articulos import *
 from microsip_api.models_base.comun.clientes import *
 from microsip_api.models_base.comun.otros import *
