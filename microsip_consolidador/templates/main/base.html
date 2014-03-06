@@ -10,9 +10,9 @@
 {% block selected_module %} Microsip {% endblock %}
 {% block breadcrumb %}{{ block.super }} {% endblock %}
 {% block tools-module %}
-<nav id="navbar-example" class="navbar navbar-default navbar-static" role="navigation">
+<nav class="navbar navbar-default navbar-static" style="background-image: linear-gradient(to bottom, #e5e5e5, #e5e5e5);" role="navigation">
   <div class="container-fluid">
-    <ul class="nav navbar-nav">
+    <!-- <ul class="nav navbar-nav"> -->
       <!-- <li class="dropdown">
         <a id="drop1" href="#" role="button" class="dropdown-toggle" data-toggle="dropdown">Articulos <b class="caret"></b></a>
         <ul class="dropdown-menu" role="menu" aria-labelledby="drop1">
@@ -23,7 +23,7 @@
           <li role="presentation"><a role="menuitem" tabindex="-1" href="http://twitter.com/fat">Separated link</a></li>
         </ul>
       </li> -->
-    </ul>
+   <!--  </ul> -->
     <ul class="nav navbar-nav navbar-right">
       {% if user.username == 'SYSDBA' %}
       <li id="fat-menu" class="dropdown">

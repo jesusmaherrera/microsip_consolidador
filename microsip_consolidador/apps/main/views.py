@@ -30,7 +30,6 @@ def get_existencia_sucursales_by_articulo_id(articulo_id, connection_name):
 
 @login_required( login_url = '/login/' )
 def index( request ):
-    connection_name = get_conecctionname(request.session)
-    existencias  = get_existencia_sucursales_by_articulo_id(1084390, connection_name)
+    
     
     return render_to_response( 'main/index.html',{}, context_instance = RequestContext( request ) )
