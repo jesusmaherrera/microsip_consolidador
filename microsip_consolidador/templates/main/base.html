@@ -12,12 +12,25 @@
 {% block tools-module %}
 <nav id="navbar-example" class="navbar navbar-default navbar-static" role="navigation">
   <div class="container-fluid">
+    <ul class="nav navbar-nav">
+      <!-- <li class="dropdown">
+        <a id="drop1" href="#" role="button" class="dropdown-toggle" data-toggle="dropdown">Articulos <b class="caret"></b></a>
+        <ul class="dropdown-menu" role="menu" aria-labelledby="drop1">
+          <li role="presentation"><a role="menuitem" tabindex="-1" href="http://twitter.com/fat">Action</a></li>
+          <li role="presentation"><a role="menuitem" tabindex="-1" href="http://twitter.com/fat">Another action</a></li>
+          <li role="presentation"><a role="menuitem" tabindex="-1" href="http://twitter.com/fat">Something else here</a></li>
+          <li role="presentation" class="divider"></li>
+          <li role="presentation"><a role="menuitem" tabindex="-1" href="http://twitter.com/fat">Separated link</a></li>
+        </ul>
+      </li> -->
+    </ul>
     <ul class="nav navbar-nav navbar-right">
-      {% if not user.is_anonymous %}
+      {% if user.username == 'SYSDBA' %}
       <li id="fat-menu" class="dropdown">
         <a href="#" id="drop3" role="button" class="dropdown-toggle" data-toggle="dropdown"> <i class="glyphicon glyphicon-cog"></i> Configuracion <b class="caret"></b></a>
         <ul class="dropdown-menu" role="menu" aria-labelledby="drop3">
           <li role="presentation"><a role="menuitem" tabindex="-1" href="/conexiones/"><i class="glyphicon glyphicon-link"></i> Conexiones</a></li>
+          <li role="presentation"><a role="menuitem" tabindex="-1" href="/sucursales/"><i class="glyphicon glyphicon-home"></i> Sucursales</a></li>
         </ul>
       </li>
       {% endif %}

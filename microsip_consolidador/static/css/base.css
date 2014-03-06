@@ -1,4 +1,7 @@
-#sic_from {
+body{
+  font-family: 'Open Sans Condensed', sans-serif;
+}
+/*#sic_from {
   background-color: #ececec;
   margin-bottom: 1em;
   padding: 0 1em 0 0;
@@ -117,3 +120,4 @@ footer {
 .text-error {
   font-size: 12px;
 }
+*/

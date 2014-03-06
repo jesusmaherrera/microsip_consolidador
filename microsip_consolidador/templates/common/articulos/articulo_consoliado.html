@@ -1,0 +1,24 @@
+{% extends "main/base.html" %}
+{% block title %}Articulo{% endblock %}
+
+<!-- CSS Code -->
+{% block style_css %}{% endblock %}
+
+<!-- JavaScript Code -->
+{% block js_code %}{% endblock %}
+
+{% block breadcrumb %}{{ block.super }} <a href="/articulos/">Articulos</a> <i class="glyphicon glyphicon-play"></i> Articulo consolidado{% endblock %}
+{% block content %}
+	<h1>{{ articulo_nombre }}</h1>
+	<table class="table table-striped">
+  		<tr>
+  			<th>Sucursal</th><th>Existencia</th>
+  		</tr>
+		{% for key,value in existencias.items %}
+			<tr>
+				<td>{{ key }}</td><td>{{ value }}</td>
+			</tr>
+		{% endfor %}
+	</table>
+	
+{% endblock %}

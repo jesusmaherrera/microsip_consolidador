@@ -268,6 +268,18 @@ class ConexionDB(models.Model):
     class Meta:
         app_label =u'auth' 
 
+class DatabaseSucursal(models.Model):  
+    name = models.CharField(max_length=100)
+    empresa_conexion = models.CharField(max_length=200)
+    sucursal_conexion = models.CharField(max_length=200)
+    sucursal_conexion_name = models.CharField(max_length=200)
+    
+    def __str__(self):  
+          return self.name    
+          
+    class Meta:
+        app_label =u'auth'
+
 class AplicationPlugin(models.Model):
     id = models.AutoField(primary_key=True)
     name = models.CharField(max_length=100)

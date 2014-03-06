@@ -10,9 +10,10 @@
   <link rel='stylesheet' href='{{STATIC_URL}}css/normalize.css'/>
 
   <!-- Latest compiled and minified CSS -->
+  <link href='http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,700,300italic' rel='stylesheet' type='text/css'>
   <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
   <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap-theme.min.css">
-  <!-- <link rel='stylesheet' href='{{STATIC_URL}}css/base.css'/> -->
+  <link rel='stylesheet' href='{{STATIC_URL}}css/base.css'/>
   
   {% block style_css %}{% endblock %}
   <link rel='shortcut icon' href='{{STATIC_URL}}img/logo.ico'>
@@ -42,6 +43,11 @@
                 </ul>
               </li>
             </ul> -->
+            <form class="navbar-form navbar-left" role="search">
+              <div class="form-group">
+                <input type="text" id='clave_id' class="form-control" placeholder="Clave articulo... ">
+              </div>
+            </form>
             <ul class="nav navbar-nav navbar-right">
               {% if not user.is_anonymous %}
               <li id="fat-menu" class="dropdown">
@@ -102,6 +108,30 @@
   <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
   <script src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
   <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+  <script type="text/javascript">
+    $(document).ready(function(){
+      $('#clave_id').focus();
+      $('#clave_id').live('keydown', function(e) { 
+        var keyCode = e.keyCode || e.which; 
+        if (keyCode == 13)
+        {
+          event.preventDefault();
+          window.location.href = '/articulo_consolidado/'+ $('#clave_id').val()+'/';
+        } 
+
+       $("#clave_id").bind('keyup', function (e) {
+          if (e.which >= 97 && e.which <= 122) {
+              var newKey = e.which - 32;
+              // I have tried setting those
+              e.keyCode = newKey;
+              e.charCode = newKey;
+          }
+
+          $("#clave_id").val(($("#clave_id").val()).toUpperCase());
+        });
+      });
+    });  
+  </script>
 
 {% block js_modulecode %}
 {% endblock %}
