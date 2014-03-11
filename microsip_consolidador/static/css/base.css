@@ -1,14 +1,13 @@
 body {
-  font-family: 'Marcellus SC', sans-serif;
-  background-color: #ECECEC;
+  font-family: 'Marcellus', sans-serif;
+  background-color: #ececec;
 }
-.nav-tools {
-  margin-bottom: 1em;
-}
-.navbar-example{
+.navbar-excample {
   border: 1px solid #d4d4d4;
 }
-
+.nav-tools {
+  margin-bottom: 0em;
+}
 .nav-tools .dropdown-toggle {
   padding: 4px 2em 4px 2em;
 }
@@ -16,13 +15,9 @@ body {
   min-height: 25px;
   font-size: 13px;
 }
-
-#tools-module-bar > nav > div > ul {
-    margin: 0px;
-}
-
 body section {
-  margin: 1em;
+  background-color: #fff;
+  padding: 1em;
 }
 .navbar-inner {
   border-radius: 0px;

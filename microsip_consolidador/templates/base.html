@@ -8,9 +8,8 @@
 
   <!-- Estilos -->
   <link rel='stylesheet' href='{{STATIC_URL}}css/normalize.css'/>
-
   <!-- Latest compiled and minified CSS -->
-  <link href='http://fonts.googleapis.com/css?family=Marcellus+SC' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Marcellus' rel='stylesheet' type='text/css'>
   <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
   <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap-theme.min.css">
   <link rel='stylesheet' href='{{STATIC_URL}}css/base.css'/>
@@ -69,7 +68,7 @@
         </div><!-- /.container-fluid -->
       </nav>
 
-  <div id="tools-module-bar" class="navbar-inner navbar-inner_min nav-tools">
+  <div id="tools-module-bar" class="navbar-inner navbar-inner_min nav-tools hidden-xs">
     {% block tools-module %}
     {% endblock %}
   </div>
@@ -85,8 +84,8 @@
   </section>
   <footer> 
     <br>
-    <div class="row-fluid text-left hidden-phone">
-      <div class="span6 offset1">
+    <div class="row-fluid text-left hidden-xs">
+      <div class="col-md-2 col-md-offset-1">
         <strong>CONTACTO </strong>
         <br>
         <address>
@@ -94,14 +93,8 @@
           <abbr title="Telefono">Tel 2:</abbr> (625) 587-7607<br>
         </address>
       </div>
-      <div class="span3">
-        <p class="text-right">
-          <!-- <img src="{{STATIC_URL}}img/logo.png" style="height: 65px; width: 80px;"> -->
-          <br>
-        </p>
-      </div>
     </div>
-    <div>
+    <div class="row-fluid row">
       SIC &copy; 2014
     </div>
   </footer>

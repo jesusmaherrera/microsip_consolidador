@@ -4,13 +4,15 @@ from django.template import RequestContext
 from datetime import datetime
 # user autentication
 from django.contrib.auth.decorators import login_required
-from microsip_consolidador.libs.models import DatabaseSucursal, Articulo, ArticuloClave
+from microsip_api.models import Articulo, ArticuloClave
+from microsip_consolidador.apps.config.sucursales.models import DatabaseSucursal
+
 from microsip_api.comun.sic_db import get_conecctionname, get_existencias_articulo, first_or_none
 
 def get_existencia_sucursales_by_articulo_id(clave, connection_name):
     bases_datos_sucursales = DatabaseSucursal.objects.filter(empresa_conexion=connection_name)
     existencias = {}
-    articulo_clave = first_or_none(ArticuloClave.objects.filter(clave=clave))
+    articulo_clave = first_or_none(ArticuloClave.objects.using(connection_name).filter(clave=clave))
     articulo_nombre = ''
     if articulo_clave:
         articulo = articulo_clave.articulo
