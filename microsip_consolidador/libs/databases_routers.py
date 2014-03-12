@@ -10,7 +10,7 @@ class MainRouter(object):
             return 'default'
         elif model._meta.app_label == 'django':
             return 'default'
-        elif model._meta.app_label == 'libs' or model._meta.app_label == 'cuentas_por_pagar' or\
+        elif model._meta.app_label == 'microsip_api' or model._meta.app_label == 'cuentas_por_pagar' or\
             model._meta.app_label == 'cuentas_por_cobrar' or model._meta.app_label == 'ventas' or\
             model._meta.app_label == 'punto_de_venta' or model._meta.app_label == 'contabilidad':
 
@@ -31,7 +31,7 @@ class MainRouter(object):
             return 'default'
         elif model._meta.app_label == 'django':
             return 'default'
-        elif model._meta.app_label == 'libs' or model._meta.app_label == 'cuentas_por_pagar' or\
+        elif model._meta.app_label == 'microsip_api' or model._meta.app_label == 'cuentas_por_pagar' or\
             model._meta.app_label == 'cuentas_por_cobrar' or model._meta.app_label == 'ventas' or\
             model._meta.app_label == 'punto_de_venta' or model._meta.app_label == 'contabilidad':
             from microsip_api.middleware import my_local_global
@@ -47,10 +47,10 @@ class MainRouter(object):
            return True
         if (obj1._meta.app_label  == 'auth' and obj2._meta.app_label == 'django') or (obj1._meta.app_label  == 'django' and obj2._meta.app_label == 'auth'):
            return True           
-        elif (obj1._meta.app_label == 'libs' or obj1._meta.app_label == 'cuentas_por_pagar' or\
+        elif (obj1._meta.app_label == 'microsip_api' or obj1._meta.app_label == 'cuentas_por_pagar' or\
             obj1._meta.app_label == 'cuentas_por_cobrar' or obj1._meta.app_label == 'ventas' or\
             obj1._meta.app_label == 'punto_de_venta' or model._meta.app_label == 'contabilidad') and \
-            (obj2._meta.app_label == 'libs' or obj2._meta.app_label == 'cuentas_por_pagar' or\
+            (obj2._meta.app_label == 'microsip_api' or obj2._meta.app_label == 'cuentas_por_pagar' or\
             obj2._meta.app_label == 'cuentas_por_cobrar' or obj2._meta.app_label == 'ventas' or\
             obj2._meta.app_label == 'punto_de_venta' or model._meta.app_label == 'contabilidad'):
             return True
@@ -69,7 +69,7 @@ class MainRouter(object):
         elif model._meta.app_label == 'django' and db != 'default':
             return False
         elif db == 'default' and \
-            ( model._meta.app_label == 'libs' or model._meta.app_label == 'cuentas_por_pagar' or  model._meta.app_label == 'ventas' or model._meta.app_label == 'cuentas_por_cobrar' or model._meta.app_label == 'punto_de_venta' or model._meta.app_label == 'contabilidad'):
+            ( model._meta.app_label == 'microsip_api' or model._meta.app_label == 'cuentas_por_pagar' or  model._meta.app_label == 'ventas' or model._meta.app_label == 'cuentas_por_cobrar' or model._meta.app_label == 'punto_de_venta' or model._meta.app_label == 'contabilidad'):
             return False
         else:
             return True
